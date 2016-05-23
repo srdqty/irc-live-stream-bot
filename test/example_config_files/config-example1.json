@@ -1,0 +1,15 @@
+{
+  "server": "<irc server hostname or ip address> (required)",
+  "nickname": "<nickname for irc> (required)",
+  "channel": "<irc channel to join> (required)",
+
+  "username": "<username for irc> (optional, defaults to nickname value)",
+  "realname": "<real name for irc> (optional, defaults to nickname value)",
+  "password": "<password for irc> (optional)",
+  "port": "<irc server port (as JSON int)> (optional, defaults to 6667)",
+
+  "twitch-streams-file": "<filename> (optional)",
+  "ustream-streams-file": "<filename> (optional)",
+  "ustream-devkey": "<developer key (as JSON string)> (optional)",
+  "hitbox-streams-file": "<filename> (optional)"
+}

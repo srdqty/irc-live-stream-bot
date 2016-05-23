@@ -1,0 +1,40 @@
+= irc-live-stream-bot
+
+An IRC bot that polls streaming websites for live streams. It supports
+polling http://www.twitch.tv, http://www.ustream.tv, and http://www.hitbox.tv.
+
+== Dependencies
+
+include::INSTALL.txt[lines=12..19]
+
+[IMPORTANT]
+.Installation Notes
+====
+The easy-irc-client library is an IRC library I wrote. The source code is available here: https://github.com/srdqty/ocaml-easy-irc-client
+
+The version of cohttp in OPAM has been updated to fix the bug (https://github.com/mirage/ocaml-cohttp/issues/166) that caused issues with irc-live-stream-bot. It's no longer necessary to install cohttp outside OPAM.
+====
+
+== Usage
+
+The bot polls specified stream channels from each site every 5 minutes.
+
+The bot will send messages to the channel it joined of the form
+"<stream url> is live" whenever it polls the stream channels and notices that a
+stream channel has become live that was not live the last time it polled.
+
+The bot also responds to three private messages from other users.
+
+* "gimme live streams":
+  The bot sends private messages back to the user indicating which
+  streams are currectly live.
+
+* "gimme all streams":
+  The bot sends private messages back to the user indicating which
+  streams the bot polls.
+
+* "gimme polling status":
+  The bot sends private message back to the user indicating how long ago
+  the stream sites were successfully polled. This is useful to check how
+  up-to-date the bot's information is.
+

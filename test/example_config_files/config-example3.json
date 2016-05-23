@@ -1,0 +1,10 @@
+{
+  "server": "irc.thinstack.net",
+  "nickname": "teststreambot1",
+  "channel": "#teststreambot1",
+
+  "twitch-streams-file": "twitch_streams.txt",
+  "ustream-streams-file": "ustream_streams.txt",
+  "ustream-devkey": "abcdefdevkeysomethingstring",
+  "hitbox-streams-file": "hitbox_streams.txt"
+}

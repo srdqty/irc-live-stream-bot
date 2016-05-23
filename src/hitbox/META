@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 90e0131e0c0df0d421bd7646ea46f8d4)
+version = "0.0.1"
+description = "An IRC bot that polls streaming websites for live streams."
+requires = "threads async_ssl cohttp.async yojson"
+archive(byte) = "hitbox_api.cma"
+archive(byte, plugin) = "hitbox_api.cma"
+archive(native) = "hitbox_api.cmxa"
+archive(native, plugin) = "hitbox_api.cmxs"
+exists_if = "hitbox_api.cma"
+# OASIS_STOP
+

@@ -1,0 +1,31 @@
+clean up code in main.ml
+
+clean up code in bot.ml
+clean up code in bot.mli
+
+clean up code in command_spec.ml
+clean up code in command_spec.mli
+
+clean up code in streams_polling.ml
+clean up code in streams_polling.mli
+
+clean up code in twitch_api.ml
+clean up code in twitch_api.mli
+
+ocamldoc documentation in main.ml
+
+ocamldoc documentation in bot.ml
+ocamldoc documentation in bot.mli
+
+ocamldoc documentation in command_spec.ml
+ocamldoc documentation in command_spec.mli
+
+ocamldoc documentation in streams_polling.ml
+ocamldoc documentation in streams_polling.mli
+
+ocamldoc documentation in twitch_api.ml
+ocamldoc documentation in twitch_api.mli
+
+generate ocamldoc documentation with oasis
+
+add manual documentation in doc/ directory

@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 0da5b5a2e2a91b5dc8e6ca98ad3fafab)
+version = "0.0.1"
+description = "An IRC bot that polls streaming websites for live streams."
+requires = "threads async_ssl cohttp.async yojson"
+archive(byte) = "ustream_api.cma"
+archive(byte, plugin) = "ustream_api.cma"
+archive(native) = "ustream_api.cmxa"
+archive(native, plugin) = "ustream_api.cmxs"
+exists_if = "ustream_api.cma"
+# OASIS_STOP
+

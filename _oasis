@@ -1,0 +1,99 @@
+OASISFormat : 0.4
+Name        : irc-live-stream-bot
+Version     : 0.0.1
+
+Authors     : Sophia Donataccio <srdqty@gmail.com>
+Copyrights  : (C) 2014 Sophia Donataccio <srdqty@gmail.com>
+Maintainers : Sophia Donataccio <srdqty@gmail.com>
+
+License     : MIT
+LicenseFile : LICENSE.txt
+Homepage    : https://github.com/srdqty/irc-live-stream-bot
+
+Plugins          : StdFiles (0.4), DevFiles (0.4), META (0.4)
+XStdFilesREADME  : false
+XStdFilesAUTHORS : false
+
+BuildTools : ocamlbuild
+
+Synopsis:
+  An IRC bot that polls streaming websites for live streams.
+Description:
+  An IRC bot that polls streaming websites for live streams.
+
+# +-------------------------------------------------------------------+
+# | Executable                                                        |
+# +-------------------------------------------------------------------+
+
+Executable "irc-live-stream-bot"
+  Path            : src
+  MainIs          : main.ml
+  CompiledObject  : best
+  ByteOpt         : -bin-annot
+  NativeOpt       : -bin-annot
+  BuildDepends    : async_ssl,
+                    cohttp.async,
+                    yojson,
+                    threads,
+                    easy-irc-client,
+                    twitch-api,
+                    ustream-api,
+                    hitbox-api
+
+# +-------------------------------------------------------------------+
+# | Repository                                                        |
+# +-------------------------------------------------------------------+
+
+SourceRepository head
+  Type     : git
+  Location : git://github.com/srdqty/irc-live-stream-bot
+  Browser  : https://github.com/srdqty/irc-live-stream-bot
+
+# +-------------------------------------------------------------------+
+# | Testing                                                           |
+# +-------------------------------------------------------------------+
+
+Library twitch_api
+  Path          : src/twitch
+  BuildDepends  : threads, async_ssl, cohttp.async, yojson
+  FindlibName   : twitch-api
+  Modules       : Twitch_api
+  Install       : false
+
+Library ustream_api
+  Path          : src/ustream
+  BuildDepends  : threads, async_ssl, cohttp.async, yojson
+  FindlibName   : ustream-api
+  Modules       : Ustream_api
+  Install       : false
+
+Library hitbox_api
+  Path          : src/hitbox
+  BuildDepends  : threads, async_ssl, cohttp.async, yojson
+  FindlibName   : hitbox-api
+  Modules       : Hitbox_api
+  Install       : false
+
+Executable poll_twitch
+  Path            : test
+  MainIs          : poll_twitch.ml
+  Build          $: flag(tests)
+  CompiledObject  : byte
+  Install         : false
+  BuildDepends    : async_ssl, cohttp.async, yojson, threads, twitch-api
+
+Executable poll_ustream
+  Path            : test
+  MainIs          : poll_ustream.ml
+  Build          $: flag(tests)
+  CompiledObject  : byte
+  Install         : false
+  BuildDepends    : async_ssl, cohttp.async, yojson, threads, ustream-api
+
+Executable poll_hitbox
+  Path            : test
+  MainIs          : poll_hitbox.ml
+  Build          $: flag(tests)
+  CompiledObject  : byte
+  Install         : false
+  BuildDepends    : async_ssl, cohttp.async, yojson, threads, hitbox-api

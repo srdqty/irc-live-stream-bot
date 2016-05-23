@@ -1,0 +1,15 @@
+{
+  "server": "irc.thinstack.net",
+  "nickname": "teststreambot1",
+  "channel": "#teststreambot1",
+
+  "username": "teststreambot1username",
+  "realname": "teststreambot1realname",
+  "password": "teststreambot1password",
+  "port": 6667,
+
+  "twitch-streams-file": "twitch_streams.txt",
+  "ustream-streams-file": "ustream_streams.txt",
+  "ustream-devkey": "abcdefdevkeysomethingstring",
+  "hitbox-streams-file": "hitbox_streams.txt"
+}
